@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Task 1: Login Page UI (Visible by Default) -->
+    <div class="card active-page" id="login-page">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <p class="switch-text">Don't have an account? <span id="go-to-signup">Sign Up</span></p>
+        <p class="switch-text"><span id="go-to-forgot">Forgot Password?</span></p>
+    </div>
+
+    <!-- Task 2: Design Signup Form (Hidden by Default) -->
+    <div class="card" id="signup-page">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Create Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p class="switch-text">Already have an account? <span id="go-to-login">Login</span></p>
+    </div>
+
+    <!-- Task 3: Create Forgot Password Screen (Hidden by Default) -->
+    <div class="card" id="forgot-password-page">
+        <h2>Reset Password</h2>
+        <p>Enter your email to receive an OTP code.</p>
+        <form id="forgot-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Send OTP</button>
+        </form>
+        <p class="switch-text"><span id="back-to-login-from-forgot">Back to Login</span></p>
+    </div>
+
+    <!-- Task 4: Design OTP Verification Page (Hidden by Default) -->
+    <div class="card" id="otp-page">
+        <h2>OTP Verification</h2>
+        <p>Enter any 4 digits to verify.</p>
+        <form id="otp-form">
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" required>
+                <input type="text" maxlength="1" required>
+                <input type="text" maxlength="1" required>
+                <input type="text" maxlength="1" required>
+            </div>
+            <button type="submit">Verify</button>
+        </form>
+    </div>
+
+    <!-- Task 5: Create Dashboard Layout (Hidden by Default) -->
+    <div class="dashboard" id="dashboard-page">
+        <header>
+            <h3>My App Dashboard</h3>
+            <button id="logout-btn">Log Out</button>
+        </header>
+        <main class="dashboard-grid">
+            <div class="stat-card"><h4>Active Users</h4><p>1,240</p></div>
+            <div class="stat-card"><h4>Monthly Sales</h4><p>$14,230</p></div>
+            <div class="stat-card"><h4>Pending Tasks</h4><p>5</p></div>
+        </main>
+    </div>
+
+    <!-- Link to the Javascript script file -->
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Design Challenges (16-30)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>UI Development Portfolio (Tasks 16-30)</h1>
+    </header>
+
+    <main class="container">
+        <!-- 16. Notification Popup -->
+        <section class="ui-card" id="task-16">
+            <h2>16. Notification Popup</h2>
+            <button onclick="showToast()">Trigger Notification</button>
+            <div id="toast-notification" class="hidden-toast">🔔 You have a new message!</div>
+        </section>
+
+        <!-- 17. Loading Screen -->
+        <section class="ui-card" id="task-17">
+            <h2>17. Loading Screen</h2>
+            <div class="spinner"></div>
+        </section>
+
+        <!-- 18. Empty State Screen -->
+        <section class="ui-card" id="task-18">
+            <h2>18. Empty State Screen</h2>
+            <div class="empty-state">
+                <p>📭 No items found. Start by adding a new project!</p>
+            </div>
+        </section>
+
+        <!-- 19. Error Page (404) -->
+        <section class="ui-card" id="task-19">
+            <h2>19. Error Page (404)</h2>
+            <div class="error-404">
+                <h3>404</h3>
+                <p>Page Not Found</p>
+            </div>
+        </section>
+
+        <!-- 20. Search Bar UI -->
+        <section class="ui-card" id="task-20">
+            <h2>20. Search Bar UI</h2>
+            <input type="text" class="search-input" placeholder="Search anything...">
+        </section>
+
+        <!-- 21. Food Delivery App UI -->
+        <section class="ui-card" id="task-21">
+            <h2>21. Food Delivery App UI</h2>
+            <div class="mock-app">
+                <p>🍔 <strong>Pizza Palace</strong></p>
+                <button class="btn-small">Order Now</button>
+            </div>
+        </section>
+
+        <!-- 22. Ecommerce Mobile App -->
+        <section class="ui-card" id="task-22">
+            <h2>22. Ecommerce Mobile App</h2>
+            <div class="mock-app">
+                <p>👟 Running Shoes - $99</p>
+                <button class="btn-small">Add to Cart</button>
+            </div>
+        </section>
+
+        <!-- 23. Fitness App Screens -->
+        <section class="ui-card" id="task-23">
+            <h2>23. Fitness App Screens</h2>
+            <div class="mock-app">
+                <p>🏃 Daily Goal: 7,500 / 10,000 steps</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+            </div>
+        </section>
+
+        <!-- 24. Banking App UI -->
+        <section class="ui-card" id="task-24">
+            <h2>24. Banking App UI</h2>
+            <div class="mock-app balance-card">
+                <p>Total Balance</p>
+                <h3>$5,240.50</h3>
+            </div>
+        </section>
+
+        <!-- 25. Chat Application -->
+        <section class="ui-card" id="task-25">
+            <h2>25. Chat Application</h2>
+            <div class="chat-box">
+                <p class="msg received">Hey! Are we meeting today?</p>
+                <p class="msg sent">Yes! See you at 5.</p>
+            </div>
+        </section>
+
+        <!-- 26. Social Media App UI -->
+        <section class="ui-card" id="task-26">
+            <h2>26. Social Media App UI</h2>
+            <div class="mock-app">
+                <p><strong>@alex</strong> Posted a new photo!</p>
+                <button class="btn-small">❤️ Like</button>
+            </div>
+        </section>
+
+        <!-- 27. Online Learning App -->
+        <section class="ui-card" id="task-27">
+            <h2>27. Online Learning App</h2>
+            <div class="mock-app">
+                <p>📚 Intro to Web Development</p>
+                <button class="btn-small">Resume Lesson</button>
+            </div>
+        </section>
+
+        <!-- 28. Task Management App -->
+        <section class="ui-card" id="task-28">
+            <h2>28. Task Management App</h2>
+            <ul class="task-list">
+                <li><input type="checkbox" checked> Code CSS layout</li>
+                <li><input type="checkbox"> Connect Javascript functions</li>
+            </ul>
+        </section>
+
+        <!-- 29. Weather App UI -->
+        <section class="ui-card" id="task-29">
+            <h2>29. Weather App UI</h2>
+            <div class="mock-app weather-widget">
+                <h3>☀️ 72°F</h3>
+                <p>Sunny - Los Angeles</p>
+            </div>
+        </section>
+
+        <!-- 30. Create Travel Booking App -->
+        <section class="ui-card" id="task-30">
+            <h2>30. Travel Booking App</h2>
+            <div class="mock-app">
+                <p>✈️ Paris to Tokyo</p>
+                <button class="btn-small">Book Flight</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production UI/UX Dashboard (Tasks 16-30)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Advanced Interface Hub</h1>
+        <p>Interactive prototypes for tasks 16 through 30</p>
+    </header>
+
+    <main class="dashboard-grid">
+        
+        <!-- 16. Design Notification Popup -->
+        <section class="card" id="task-16">
+            <div class="card-header">16. Notification Popup</div>
+            <div class="card-body central-btn-layout">
+                <button class="action-btn" onclick="triggerToast()">Simulate Event</button>
+                <div id="toast-box" class="toast hidden">
+                    <span class="toast-icon">✨</span>
+                    <div class="toast-content">
+                        <h4>System Update</h4>
+                        <p>Changes saved successfully.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 17. Create Loading Screen -->
+        <section class="card" id="task-17">
+            <div class="card-header">17. Loading Screen Overlay</div>
+            <div class="card-body central-btn-layout">
+                <button class="action-btn" onclick="triggerLoadingScreen()">Show Fullscreen Loader</button>
+            </div>
+            <div id="loading-overlay" class="loader-overlay hidden-overlay">
+                <div class="spinner-ring"></div>
+                <p>Loading application data...</p>
+            </div>
+        </section>
+
+        <!-- 18. Design Empty State Screen -->
+        <section class="card" id="task-18">
+            <div class="card-header">18. Empty State Screen</div>
+            <div class="card-body">
+                <div class="empty-state-view">
+                    <div class="empty-icon">📁</div>
+                    <h3>No Projects Found</h3>
+                    <p>Your workspace is completely empty. Create a new repository to get started.</p>
+                    <button class="secondary-btn">New Project</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 19. Create Error Page (404) -->
+        <section class="card" id="task-19">
+            <div class="card-header">19. Error Page (404)</div>
+            <div class="card-body">
+                <div class="error-wrapper">
+                    <h2 class="error-code">404</h2>
+                    <h3>Lost in Space</h3>
+                    <p>The page you are hunting for does not exist or was moved permanently.</p>
+                    <a href="#" class="inline-link">Return Home</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 20. Design Search Bar UI -->
+        <section class="card" id="task-20">
+            <div class="card-header">20. Search Bar UI</div>
+            <div class="card-body">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="live-search" class="styled-search-input" placeholder="Search documentation..." onkeyup="filterSearchItems()">
+                </div>
+                <ul class="search-results-list" id="search-list">
+                    <li>Getting Started Guide</li>
+                    <li>CSS Variables Reference</li>
+                    <li>JavaScript Promises Guide</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 21. Design Food Delivery App UI -->
+        <section class="card" id="task-21">
+            <div class="card-header">21. Food Delivery Interface</div>
+            <div class="card-body">
+                <div class="food-app-widget">
+                    <img class="food-hero" src="https://unsplash.com" alt="Pizza">
+                    <div class="food-details">
+                        <div class="food-meta"><span>🍕 Artisan Pizza</span> <span class="rating">⭐️ 4.9</span></div>
+                        <p class="delivery-time">Delivery: 15-25 mins • Free Delivery</p>
+                        <button class="app-action-btn" onclick="addToOrder('Artisan Pizza')">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 22. Create Ecommerce Mobile App -->
+        <section class="card" id="task-22">
+            <div class="card-header">22. E-commerce Product Unit</div>
+            <div class="card-body">
+                <div class="ecommerce-widget">
+                    <div class="product-badge">Hot</div>
+                    <img class="product-img" src="https://unsplash.com" alt="Sneakers">
+                    <div class="product-info">
+                        <h3>Air Max Crimson</h3>
+                        <div class="price-row"><span class="price">$120.00</span><span class="old-price">$160.00</span></div>
+                        <button class="app-action-btn buy-btn" onclick="addToCart()">Add to Bag</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 23. Design Fitness App Screens -->
+        <section class="card" id="task-23">
+            <div class="card-header">23. Fitness Tracker Screen</div>
+            <div class="card-body">
+                <div class="fitness-widget">
+                    <div class="activity-metric">
+                        <span>Daily Steps</span>
+                        <strong>8,432 / 10,000</strong>
+                    </div>
+                    <div class="progress-track"><div class="progress-bar-fill" style="width: 84.32%;"></div></div>
+                    <div class="fitness-stats-row">
+                        <div>⚡ 420 kcal</div>
+                        <div>⏱️ 45 mins</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 24. Create Banking App UI -->
+        <section class="card" id="task-24">
+            <div class="card-header">24. Digital Banking Wallet</div>
+            <div class="card-body">
+                <div class="banking-widget">
+                    <div class="card-chip"></div>
+                    <p class="card-label">Available Balance</p>
+                    <h2 class="card-balance" id="wallet-balance">$14,250.75</h2>
+                    <div class="card-number">**** **** **** 8824</div>
+                    <div class="banking-actions">
+                        <button onclick="modifyBalance(250)">Deposit $250</button>
+                        <button onclick="modifyBalance(-100)">Withdraw $100</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+<div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+    <span>24. Digital Banking Wallet</span>
+    <a href="banking.html" style="font-size: 0.8rem; color: #2563eb; text-decoration: none;">View Standalone Page →</a>
+</div>
+        <!-- 25. Design Chat Application -->
+        <section class="card" id="task-25">
+            <div class="card-header">25. Live Chat Core Window</div>
+            <div class="card-body chat-flex">
+                <div class="chat-history" id="chat-messages">
+                    <div class="msg inbound">Hey, is the layout responsive?</div>
+                    <div class="msg outbound">Yes! Try changing screen sizing.</div>
+                </div>
+                <div class="chat-input-row">
+                    <input type="text" id="chat-typed-text" placeholder="Type a message..." onkeypress="handleChatKey(event)">
+                    <button class="send-message-btn" onclick="sendChat()">Send</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 26. Create Social Media App UI -->
+        <section class="card" id="task-26">
+            <div class="card-header">26. Social Feed Component</div>
+            <div class="card-body">
+                <div class="social-post">
+                    <div class="user-row">
+                        <div class="avatar">JD</div>
+                        <div><strong>Jane Doe</strong><br><small>2 hours ago</small></div>
+                    </div>
+                    <p class="post-content">Just finished designing the updated dark mode stylesheet. Production release is scheduled for tomorrow night! 🎉</p>
+                    <div class="post-actions">
+                        <button class="social-btn" onclick="likePost(this)">❤️ <span class="like-count">14</span> Likes</button>
+                        <button class="social-btn">💬 3 Comments</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 27. Design Online Learning App -->
+        <section class="card" id="task-27">
+            <div class="card-header">27. E-Learning Course Tracker</div>
+            <div class="card-body">
+                <div class="learning-widget">
+                    <div class="course-header">
+                        <span class="badge-tech">Advanced UI</span>
+                        <h3>Mastering CSS Grid & Flexbox Layouts</h3>
+                    </div>
+                    <p class="course-meta">Module 4 of 12 • 45 mins remaining</p>
+                    <div class="progress-track"><div class="progress-bar-fill learning-color" style="width: 33%;"></div></div>
+                    <button class="app-action-btn run-learning-btn">Continue Module</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 28. Create Task Management App -->
+        <section class="card" id="task-28">
+            <div class="card-header">28. Task Management Dashboard</div>
+            <div class="card-body">
+                <div class="todo-widget">
+                    <div class="todo-input-row">
+                        <input type="text" id="new-todo-text" placeholder="Add missing objective...">
+                        <button onclick="addTodoItem()">+</button>
+                    </div>
+                    <ul class="todo-list" id="todo-item-container">
+                        <li>
+                            <label><input type="checkbox" checked> Build base HTML document layouts</label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox"> Wire standard JS application scripts</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 29. Design Weather App UI -->
+        <section class="card" id="task-29">
+            <div class="card-header">29. Weather Metric Display</div>
+            <div class="card-body">
+                <div class="weather-widget">
+                    <div class="weather-main">
+                        <div class="weather-temp">
+                            <h2>68°F</h2>
+                            <p>Scattered Clouds</p>
+                        </div>
+                        <div class="weather-big-icon">⛅</div>
+                    </div>
+                    <div class="weather-forecast-row">
+                        <div>Mon <br> ☀️ 72°</div>
+                        <div>Tue <br> 🌧️ 58°</div>
+                        <div>Wed <br> ⛅ 64°</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 30. Create Travel Booking App -->
+        <section class="card" id="task-30">
+            <div class="card-header">30. Travel Booking Matrix</div>
+            <div class="card-body">
+                <div class="travel-widget">
+                    <div class="booking-selectors">
+                        <div class="select-block"><label>From</label><input type="text" value="New York (JFK)"></div>
+                        <div class="select-block"><label>To</label><input type="text" value="London (LHR)"></div>
+                    </div>
+                    <div class="booking-selectors">
+                        <div class="select-block"><label>Depart</label><input type="date" value="2026-06-15"></div>
+                        <div class="select-block"><label>Class</label><input type="text" value="Business Class"></div>
+                    </div>
+                    <button class="app-action-btn search-flights-btn" onclick="simulateFlightSearch()">Search Available Flights</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Your UI elements go here -->
+    <header>
+        <h1>Welcome to the App/Website</h1>
+    </header>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineStream - Watch Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">CineStream</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">My List</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Search movies...">
+        </div>
+    </nav>
+
+    <!-- Hero Feature Banner -->
+    <header class="hero-banner">
+        <div class="hero-content">
+            <span class="badge">Trending #1</span>
+            <h1>Interstellar Odyssey</h1>
+            <p>A team of explorers travel beyond this galaxy to discover whether mankind has a future among the stars.</p>
+            <div class="hero-buttons">
+                <button class="btn play-btn">▶ Play Now</button>
+                <button class="btn info-btn">ℹ More Info</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Video Rows -->
+    <main class="container">
+        
+        <!-- Row 1: Continue Watching -->
+        <section class="movie-section">
+            <h2>Continue Watching</h2>
+            <div class="movie-row">
+                <div class="movie-card progress-card">
+                    <div class="thumbnail tint-1">🎬 Cyberpunk 2099</div>
+                    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+                </div>
+                <div class="movie-card progress-card">
+                    <div class="thumbnail tint-2">🎬 Deep Ocean Blue</div>
+                    <div class="progress-bar"><div class="progress" style="width: 30%;"></div></div>
+                </div>
+                <div class="movie-card progress-card">
+                    <div class="thumbnail tint-3">🎬 Shadow Ninja</div>
+                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="movie-card progress-card">
+                    <div class="thumbnail tint-4">🎬 The Last Crown</div>
+                    <div class="progress-bar"><div class="progress" style="width: 10%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 2: Trending Now -->
+        <section class="movie-section">
+            <h2>Trending Movies</h2>
+            <div class="movie-row">
+                <div class="movie-card"><div class="thumbnail tint-5">Movie 1</div></div>
+                <div class="movie-card"><div class="thumbnail tint-6">Movie 2</div></div>
+                <div class="movie-card"><div class="thumbnail tint-7">Movie 3</div></div>
+                <div class="movie-card"><div class="thumbnail tint-8">Movie 4</div></div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Design Projects Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dashboard Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="brand">🚀 UI Master Hub</div>
+        <nav class="menu">
+            <p class="menu-label">Mobile App UIs</p>
+            <a href="31_movie_streaming_app/index.html" target="preview-frame">31. Movie Streaming</a>
+            <a href="32_music_player_app/index.html" target="preview-frame">32. Music Player</a>
+            <a href="33_healthcare_app/index.html" target="preview-frame">33. Healthcare App</a>
+            <a href="34_cab_booking_app/index.html" target="preview-frame">34. Cab Booking</a>
+            <a href="35_event_management_app/index.html" target="preview-frame">35. Event Manager</a>
+            
+            <p class="menu-label">Web System UIs</p>
+            <a href="36_portfolio_website/index.html" target="preview-frame">36. Portfolio Web</a>
+            <a href="37_company_website/index.html" target="preview-frame">37. Company UI</a>
+            <a href="38_educational_institute/index.html" target="preview-frame">38. Education Web</a>
+            <a href="39_restaurant_website/index.html" target="preview-frame">39. Restaurant Web</a>
+            <a href="40_real_estate_website/index.html" target="preview-frame">40. Real Estate</a>
+        </nav>
+    </aside>
+
+    <!-- Main Live Workspace Area -->
+    <main class="main-content">
+        <header class="top-bar">
+            <h1>Task 31 - 40 Project Manager</h1>
+            <div class="status-badge">All Systems Operational</div>
+        </header>
+
+        <!-- Dynamic Live Preview Box -->
+        <section class="preview-box">
+            <iframe name="preview-frame" src="31_movie_streaming_app/index.html" title="Project Preview">
+                <!-- Fallback warning if your folders aren't created yet -->
+                Your browser does not support live project framing.
+            </iframe>
+        </section>
+    </main>
+
+</body>
+</html>
