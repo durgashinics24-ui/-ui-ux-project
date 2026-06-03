@@ -1,0 +1,4 @@
+body{display:flex;font-family:Inter,Arial;height:100vh;margin:0}
+.sidebar{width:220px;background:#0b1220;color:#fff;padding:16px}
+.content{flex:1;padding:20px;background:#f3f4f6}
+.card{background:#fff;padding:12px;border-radius:8px}

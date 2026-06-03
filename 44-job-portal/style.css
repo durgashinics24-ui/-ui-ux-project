@@ -1,0 +1,5 @@
+body{font-family:Inter,Arial;background:#f8fafc;color:#0b1220}
+.site-header{background:#0b3d91;color:#fff;padding:18px;text-align:center}
+.container{padding:20px}
+.search{display:flex;gap:8px;max-width:720px;margin:0 auto}
+#results{margin-top:16px}

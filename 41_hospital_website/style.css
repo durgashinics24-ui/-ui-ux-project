@@ -1,0 +1,11 @@
+:root{--accent:#2563eb;--bg:#f8fafc;--card:#ffffff}
+*{box-sizing:border-box;font-family:Arial,system-ui,-apple-system}
+body{margin:0;background:var(--bg);color:#0f172a}
+.site-header{background:var(--accent);color:white;padding:18px 20px}
+.site-header nav{font-size:0.95rem}
+.hero{padding:28px 20px;text-align:center}
+.cards{display:flex;gap:12px;padding:20px}
+.card{background:var(--card);padding:14px;border-radius:8px;box-shadow:0 1px 4px rgba(2,6,23,0.06)}
+#contact{padding:20px}
+#contact-form input,#contact-form textarea{display:block;width:100%;padding:8px;margin:8px 0;border:1px solid #cbd5e1;border-radius:6px}
+button{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}

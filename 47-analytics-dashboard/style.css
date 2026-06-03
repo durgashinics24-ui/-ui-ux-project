@@ -1,0 +1,4 @@
+body{font-family:Inter,Arial;background:#f8fafc;color:#0f172a;padding:20px}
+.metrics{display:flex;gap:12px}
+.metric{background:#fff;padding:12px;border-radius:8px;flex:1;text-align:center}
+.metric h4{color:#64748b}

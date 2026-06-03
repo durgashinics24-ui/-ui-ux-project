@@ -1,0 +1,5 @@
+body{font-family:system-ui,Arial;background:#fff;color:#0b1220;padding:20px}
+header{border-bottom:1px solid #e6edf3;padding-bottom:12px;margin-bottom:16px}
+.posts{max-width:720px;margin:0 auto}
+.post{padding:16px;border-radius:8px;border:1px solid #eef2f7;margin-bottom:12px}
+.meta{color:#64748b;font-size:0.9rem}

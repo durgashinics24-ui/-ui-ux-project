@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enterprise Operational Suite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar-panel">
+    <div style="padding: 12px; font-weight: bold; border-bottom: 1px solid var(--border-color); margin-bottom: 12px;">Operational Suite</div>
+    <button class="tab-nav-btn active-tab" data-target="s101">101. College Management</button>
+    <button class="tab-nav-btn" data-target="s102">102. HR System</button>
+    <button class="tab-nav-btn" data-target="s103">103. Inventory Tracker</button>
+    <button class="tab-nav-btn" data-target="s104">104. Attendance Ledger</button>
+    <button class="tab-nav-btn" data-target="s105">105. Employee Tasks</button>
+    <button class="tab-nav-btn" data-target="s106">106. Exam Portal</button>
+    <button class="tab-nav-btn" data-target="s107">107. Internship Hub</button>
+    <button class="tab-nav-btn" data-target="s108">108. LMS Deck</button>
+    <button class="tab-nav-btn" data-target="s109">109. Hotel Booking</button>
+    <button class="tab-nav-btn" data-target="s110">110. Aviation Hours</button>
+  </aside>
+
+  <main class="content-canvas">
+    <!-- 101 -->
+    <div id="s101" class="screen-view-panel display-active">
+      <h2>101. College Management Registry</h2>
+      <div class="dashboard-widget"><button class="action-btn" id="add-student-btn">Enroll New Student</button><p style="margin-top:12px;" id="student-count-label">Total Registered Students: 14,204</p></div>
+    </div>
+    <!-- 102 -->
+    <div id="s102" class="screen-view-panel">
+      <h2>102. HR Directory</h2>
+      <div class="dashboard-widget">
+        <table class="data-table">
+          <thead><tr><th>Staff ID</th><th>Name</th><th>Status</th></tr></thead>
+          <tbody id="hr-table-body">
+            <tr><td>#EMP-0941</td><td>Rahul Sharma</td><td><span class="status-tag" style="background:var(--accent-green);">Active</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- 103 -->
+    <div id="s103" class="screen-view-panel">
+      <h2>103. Inventory Controls</h2>
+      <div class="dashboard-widget"><h3>Hardware Components Balance</h3><p id="inventory-alert-log" style="color:var(--accent-red); font-weight:700; margin:10px 0;">4 items running low</p><button class="action-btn" style="background:var(--accent-green);" id="restock-btn">Reorder All Depleted Batches</button></div>
+    </div>
+    <!-- 104 -->
+    <div id="s104" class="screen-view-panel">
+      <h2>104. Attendance Monitoring System</h2>
+      <div class="dashboard-widget"><h3>Clock-In Tracking Registry</h3><button class="action-btn" id="biometric-check-btn">Perform Biometric Check-In</button><p style="margin-top:12px;" id="attendance-status">Status: Waiting for authentication input...</p></div>
+    </div>
+    <!-- 105 -->
+    <div id="s105" class="screen-view-panel">
+      <h2>105. Employee Tasks Management</h2>
+      <div class="ui-grid-3">
+        <div class="dashboard-widget"><h4>Pending Tasks Queue</h4><ul id="task-list-backlog" style="margin-top:10px; padding-left:16px;"><li>Refactor backend auth pipeline</li></ul><button class="action-btn" id="complete-task-btn" style="margin-top:12px; font-size:0.8rem; width:100%;">Mark Queue Item Done</button></div>
+      </div>
+    </div>
+    <!-- 106 -->
+    <div id="s106" class="screen-view-panel">
+      <h2>106. Secure Examination Portal</h2>
+      <div class="dashboard-widget"><h3>System Architecture Final Evaluation</h3><p style="font-size:1.5rem; font-weight:700; color:var(--accent-red); margin:12px 0;" id="exam-timer">Time Left: 10:00</p></div>
+    </div>
+    <!-- 107 -->
+    <div id="s107" class="screen-view-panel">
+      <h2>107. Internship Placement Workspace</h2>
+      <div class="ui-grid-2">
+        <div class="dashboard-widget"><h4>Cloud Engineer Intern</h4><p style="color:var(--text-secondary); margin:8px 0;">Google Infrastructure Labs</p><button class="action-btn intern-apply-btn">Submit Profile Entry</button></div>
+      </div>
+    </div>
+    <!-- 108 -->
+    <div id="s108" class="screen-view-panel">
+      <h2>108. LMS Course Dashboard</h2>
+      <div class="dashboard-widget"><h3>Module Progression: Compilers Architecture</h3><div style="width:100%; height:10px; background:#4b5563; border-radius:5px; margin:12px 0; overflow:hidden;"><div id="lms-progress-fill" style="width:40%; height:100%; background:var(--accent-purple); transition:width 0.4s;"></div></div><button class="action-btn" id="next-lesson-btn" style="background:var(--accent-purple);">Check-Off Next Lesson Module</button></div>
+    </div>
+    <!-- 109 -->
+    <div id="s109" class="screen-view-panel">
+      <h2>109. Hospitality Booking Engine</h2>
+      <div class="dashboard-widget flex-row">
+        <input type="text" id="hotel-query" class="input-field" placeholder="Type destination city..." style="max-width:300px; margin-right:12px;">
+        <button class="action-btn" style="background:var(--accent-orange);" id="hotel-search-btn">Search Lodging</button>
+        <p id="hotel-results-log" style="margin-top:12px; color:var(--text-secondary);"></p>
+      </div>
+    </div>
+    <!-- 110 -->
+    <div id="s110" class="screen-view-panel">
+      <h2>110. Aviation Training Hours Tracker</h2>
+      <div class="dashboard-widget"><h4>Simulated Instrument Hours Logged</h4><p style="font-size:2rem; font-weight:700; color:var(--accent-orange); margin:10px 0;" id="flight-hours-label">184.5 hrs</p><button class="action-btn" id="log-flight-btn">Add 1 Hour Flight Sim Time</button></div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

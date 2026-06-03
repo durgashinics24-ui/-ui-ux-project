@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Next-Gen Application Ecosystem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar-panel">
+    <div style="padding: 12px; font-weight: bold; border-bottom: 1px solid var(--border-color); margin-bottom: 12px;">Ecosystem Platforms</div>
+    <button class="tab-nav-btn active-tab" data-target="s111">111. Solar Company</button>
+    <button class="tab-nav-btn" data-target="s112">112. Business Analytics</button>
+    <button class="tab-nav-btn" data-target="s113">113. AI Learning Platform</button>
+    <button class="tab-nav-btn" data-target="s114">114. Cloud Storage UI</button>
+    <button class="tab-nav-btn" data-target="s115">115. Digital Wallet</button>
+    <button class="tab-nav-btn" data-target="s116">116. Customer Support</button>
+    <button class="tab-nav-btn" data-target="s117">117. Ecommerce Admin</button>
+    <button class="tab-nav-btn" data-target="s118">118. Freelancer Network</button>
+    <button class="tab-nav-btn" data-target="s119">119. Logistics Tracking</button>
+    <button class="tab-nav-btn" data-target="s120">120. Healthcare Booking</button>
+  </aside>
+
+  <main class="content-canvas">
+    <!-- 111 -->
+    <div id="s111" class="screen-view-panel display-active">
+      <h2>111. Solar Generation Utility</h2>
+      <div class="dashboard-widget"><h3>Rooftop Panel Generation Yield</h3><p style="font-size:2rem; font-weight:700; color:var(--accent-green);" id="solar-yield-output">42.8 kWh</p><button class="action-btn" id="simulate-sunlight-btn" style="margin-top:12px; background:var(--accent-orange);">Trigger Panel Solar Cycle</button></div>
+    </div>
+    <!-- 112 -->
+    <div id="s112" class="screen-view-panel">
+      <h2>112. Business Analytics Terminal</h2>
+      <div class="dashboard-widget"><h3>Monthly Recurring Revenue Performance</h3><p style="font-size:2rem; font-weight:700; color:var(--accent-green);" id="mrr-metric-label">₹1,84,000</p><button class="action-btn" id="refresh-analytics-btn">Poll Server Data</button></div>
+    </div>
+    <!-- 113 -->
+    <div id="s113" class="screen-view-panel">
+      <h2>113. Adaptive AI Learning Node</h2>
+      <div class="dashboard-widget"><p id="ai-insight-box" style="background:rgba(139, 92, 246, 0.1); border:1px solid var(--accent-purple); padding:16px; border-radius:6px;"></p><button class="action-btn" style="background:var(--accent-purple); margin-top:12px;" id="ai-regenerate-btn">Request Alternate Branch</button></div>
+    </div>
+    <!-- 114 -->
+    <div id="s114" class="screen-view-panel">
+      <h2>114. Cloud Encrypted Storage Vault</h2>
+      <div class="dashboard-widget flex-col"><h3>Partition Allotment Capacity</h3><div style="width:100%; height:12px; background:#4b5563; border-radius:6px; overflow:hidden;"><div id="cloud-storage-bar" style="width:64.2%; height:100%; background:var(--accent-blue); transition:width 0.3s;"></div></div><button class="action-btn" id="upload-file-btn">Upload Test Archive (+5GB)</button></div>
+    </div>
+    <!-- 115 -->
+    <div id="s115" class="screen-view-panel">
+      <h2>115. Digital Wallet Dashboard</h2>
+      <div class="ui-grid-2">
+        <div class="dashboard-widget" style="background:linear-gradient(135deg, #065f46, #10b981); border:none;"><h5>Net Floating Capital</h5><h2 style="font-size:2.25rem; font-weight:700; margin-top:8px;" id="wallet-balance-label">₹48,250.00</h2></div>
+        <div class="dashboard-widget flex-row"><button class="action-btn" id="wallet-add-funds" style="background:#fff; color:#000; font-weight:700;">Deposit Funds</button></div>
+      </div>
+    </div>
+    <!-- 116 -->
+    <div id="s116" class="screen-view-panel">
+      <h2>116. Customer Support Escalation Queue</h2>
+      <div class="dashboard-widget"><button class="action-btn" id="resolve-ticket-btn" style="background:var(--accent-green);">Acknowledge Highest Escalation Ticket</button></div>
+    </div>
+    <!-- 117 -->
+    <div id="s117" class="screen-view-panel">
+      <h2>117. E-Commerce Administration Console</h2>
+      <div class="dashboard-widget"><h4>Gross Operational Billing Today</h4><p style="font-size:2rem; font-weight:700; color:var(--accent-green); margin-top:8px;" id="ecom-rev-label">₹1,84,320</p><button class="action-btn" id="simulate-purchase-btn" style="margin-top:12px;">Inject Mock Transaction</button></div>
+    </div>
+    <!-- 118 -->
+    <div id="s118" class="screen-view-panel">
+      <h2>118. Freelancer Marketplace Core</h2>
+      <div class="dashboard-widget"><h3>Available Talent Resource Registry</h3><select id="talent-selector" class="input-field" style="max-width:320px; margin-bottom:12px;"><option value="6500">Cloud Lead Architect — ₹6,500/hr</option><option value="4800">WebGL Interaction Engineer — ₹4,800/hr</option></select><p id="contract-calculation-log" style="color:var(--accent-green); font-weight:600;"></p></div>
+    </div>
+    <!-- 119 -->
+    <div id="s119" class="screen-view-panel">
+      <h2>119. Supply Chain Logistics Telemetry</h2>
+      <div class="dashboard-widget"><div class="flex-row" style="justify-content:space-between;"><strong>Consignment ID: #LOG-8942-IN</strong><button class="action-btn" id="ping-fleet-btn" style="background:var(--accent-orange);">Query Transit GPS Ping</button></div><p id="logistics-gps-log" style="margin-top:12px; font-family:var(--font-mono); color:var(--text-secondary);">Last Checkpoint: Terminal Port Hub Storage Enclosure</p></div>
+    </div>
+    <!-- 120 -->
+    <div id="s120" class="screen-view-panel">
+      <h2>120. Healthcare Consultation Booking</h2>
+      <div class="dashboard-widget"><h3>Diagnostic Time Selection</h3><div class="ui-grid-3" id="appointment-slots-root"><button class="action-btn slot-select-btn">09:30 AM</button><button class="action-btn slot-select-btn">11:15 AM</button><button class="action-btn slot-select-btn">03:45 PM</button></div></div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+  <!-- Ensure this line is present at the very bottom of your index.html -->
+  <script src="app.js"></script>
+</body>
+</html>

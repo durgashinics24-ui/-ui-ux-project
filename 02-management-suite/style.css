@@ -1,0 +1,21 @@
+:root {
+  --bg-app: #0b0f19; --bg-sidebar: #111827; --bg-card: #1f2937; --border-color: #374151;
+  --text-primary: #f9fafb; --text-secondary: #9ca3af;
+  --accent-blue: #3b82f6; --accent-green: #10b981; --accent-orange: #f59e0b; --accent-purple: #8b5cf6; --accent-red: #ef4444;
+  --radius-md: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; background-color: var(--bg-app); color: var(--text-primary); display: flex; min-height: 100vh; }
+.sidebar-panel { width: 280px; background-color: var(--bg-sidebar); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 16px; gap: 8px; }
+.tab-nav-btn { width: 100%; background: transparent; border: none; color: var(--text-secondary); padding: 12px; text-align: left; font-size: 0.875rem; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; }
+.tab-nav-btn:hover, .tab-nav-btn.active-tab { background-color: var(--accent-blue); color: #fff; }
+.content-canvas { flex: 1; padding: 40px; }
+.screen-view-panel { display: none; flex-direction: column; gap: 24px; }
+.screen-view-panel.display-active { display: flex; }
+.dashboard-widget { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; }
+.ui-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.data-table th, .data-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border-color); }
+.status-tag { padding: 4px 8px; font-size: 0.75rem; font-weight: 600; border-radius: 4px; color: #000; }
+.input-field { background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: white; padding: 10px; border-radius: var(--radius-md); width: 100%; outline: none; }
+.action-btn { background: var(--accent-blue); color: white; border: none; padding: 10px 16px; border-radius: var(--radius-md); cursor: pointer; font-weight: 500; }
