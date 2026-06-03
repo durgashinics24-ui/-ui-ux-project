@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Task 72 - Interactive Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 72. DESIGN INTERACTIVE PROTOTYPE COMPONENT -->
+        <div class="prototype-card">
+            <header class="prototype-header">
+                <span class="badge">Task 72: UI Expansion</span>
+                <h2>72. CSS Toggle Expansion Prototype</h2>
+                <p class="subtitle">Focus: Simulating advanced dynamic toggle content blocks natively without relying on scripts.</p>
+            </header>
+
+            <!-- INTERACTIVE CANVAS WRAPPER -->
+            <div class="interactive-shell">
+                
+                <!-- Hidden Checkbox to Track Toggle State -->
+                <input type="checkbox" id="expand-toggle" class="toggle-input" hidden>
+
+                <div class="expandable-box">
+                    <!-- Visible Summary Card Bar -->
+                    <div class="box-summary-row">
+                        <div class="summary-info">
+                            <h4>📦 Project Blueprint Meta</h4>
+                            <p>Status: Under Review • Updated 2 hrs ago</p>
+                        </div>
+                        <!-- Clicking this label updates the hidden checkbox -->
+                        <label for="expand-toggle" class="action-toggle-lbl">View Details</label>
+                    </div>
+
+                    <!-- Hidden Drawer Content Block -->
+                    <div class="drawer-expanded-content">
+                        <div class="drawer-inner-wrap">
+                            <h5>Detailed Metrics Breakdown</h5>
+                            <ul class="metrics-list">
+                                <li><strong>Asset Footprints:</strong> 14.2 MB compressed payload size.</li>
+                                <li><strong>Server Stability:</strong> 99.98% runtime cluster connection rate.</li>
+                                <li><strong>UX Compliance:</strong> Passed Accessibility Audit Guidelines seamlessly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

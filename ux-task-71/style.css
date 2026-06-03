@@ -1,0 +1,139 @@
+/* SYSTEM LEVEL CORE RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+}
+
+/* CARRIER MODULE PANEL CARD BACKGROUND */
+.prototype-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.prototype-header {
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.prototype-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* APP SIMULATOR DISPLAY INTERFACE */
+.prototype-app-shell {
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* TABS BUTTON NAVIGATION STRIP */
+.prototype-nav {
+    display: flex;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-tab {
+    flex: 1;
+    padding: 14px;
+    text-align: center;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.nav-tab:hover {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* VIEW CARRIER PANELS */
+.view-panels-container {
+    padding: 24px;
+    min-height: 140px;
+}
+
+.content-panel {
+    display: none;
+}
+
+.content-panel h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.content-panel p {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* 🔄 PURE CSS INTERACTIVE MAPPING ENGINE */
+#tab1-trigger:checked ~ .prototype-nav .btn-tab1 {
+    color: #0369a1;
+    background-color: #f0f9ff;
+    border-bottom: 3px solid #0369a1;
+}
+
+#tab2-trigger:checked ~ .prototype-nav .btn-tab2 {
+    color: #0369a1;
+    background-color: #f0f9ff;
+    border-bottom: 3px solid #0369a1;
+}
+
+#tab1-trigger:checked ~ .view-panels-container .panel-inbox {
+    display: block;
+}
+
+#tab2-trigger:checked ~ .view-panels-container .panel-settings {
+    display: block;
+}

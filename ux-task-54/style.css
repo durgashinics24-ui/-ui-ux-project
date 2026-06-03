@@ -1,0 +1,134 @@
+/* SYSTEM LEVEL RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* MAIN SUITE BACKGROUND OUTLINE */
+.journey-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.journey-header {
+    margin-bottom: 28px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #fffee7;
+    color: #b45309;
+    border: 1px solid #fde047;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.journey-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* TIMELINE STAGE MATRIX COLUMNS */
+.journey-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.timeline-column {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.stage-step {
+    font-size: 11px;
+    font-weight: 700;
+    color: #6366f1;
+    text-transform: uppercase;
+}
+
+.stage-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.data-block {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.data-block h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    margin-bottom: 4px;
+}
+
+.data-block p {
+    color: #334155;
+}
+
+/* HIGH DESCRIPTIVE CONTRAST SUBSECTION BLOCKS */
+.data-block.pain-point {
+    background-color: #fef2f2;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 3px solid #ef4444;
+}
+.data-block.pain-point h4 { color: #991b1b; }
+
+.data-block.opportunity {
+    background-color: #f0fdf4;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 3px solid #22c55e;
+}
+.data-block.opportunity h4 { color: #166534; }
+
+/* LAYOUT COLLAPSE BREAKPOINT FIXES */
+@media (max-width: 768px) {
+    .journey-timeline {
+        grid-template-columns: 1fr;
+    }
+}

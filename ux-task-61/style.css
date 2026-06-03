@@ -1,0 +1,147 @@
+/* RESET RULES & MOCK WIREFRAME SHADES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+}
+
+/* OUTLINE FRAME BLOCK */
+.wireframe-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.wireframe-header {
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.wireframe-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* LOW FIDELITY CANVAS MOCK ARCHITECTURE */
+.wireframe-canvas {
+    background-color: #ffffff;
+    border: 2px solid #94a3b8;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* BASE SKELETON REUSABLE LAYOUT SHAPES */
+.lofi-box {
+    background-color: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: 4px;
+}
+
+.lofi-row {
+    display: flex;
+    gap: 8px;
+}
+
+/* HEADER LAYER PLACEHOLDERS */
+.lofi-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+
+.logo-place {
+    width: 80px;
+    height: 24px;
+}
+
+.link-item {
+    width: 50px;
+    height: 16px;
+}
+
+/* HERO SECTION PLACEHOLDERS */
+.lofi-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 32px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.hero-title-place {
+    width: 70%;
+    height: 32px;
+}
+
+.hero-text-place {
+    width: 90%;
+    height: 16px;
+}
+
+.hero-btn-place {
+    width: 120px;
+    height: 36px;
+}
+
+/* FEATURE GRID PLACEHOLDERS */
+.lofi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.grid-item-place {
+    height: 80px;
+}
+
+/* COLLAPSED SYSTEM MEDIA HOOKS */
+@media (max-width: 540px) {
+    .lofi-grid {
+        grid-template-columns: 1fr;
+    }
+}

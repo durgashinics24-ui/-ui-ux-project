@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>51. Conduct user interviews</title>
+  <link rel="stylesheet" href="../workspace.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="task-page">
+    <a class="back-link" href="../index.html">← Back to Workspace</a>
+    <h1>51. Conduct user interviews</h1>
+    <p class="lead">Use this page to plan and capture interview notes for user research.</p>
+
+    <section class="panel">
+      <form id="interviewForm" class="form-stack">
+        <label>Participant name</label>
+        <input id="participant" type="text" placeholder="e.g. Ravi Kumar" required>
+
+        <label>Role / Profile</label>
+        <input id="role" type="text" placeholder="e.g. Product Manager">
+
+        <label>Date</label>
+        <input id="date" type="date">
+
+        <label>Key takeaways</label>
+        <textarea id="notes" placeholder="Summarize the main points..."></textarea>
+
+        <label>Satisfaction (1-5)</label>
+        <select id="rating">
+          <option value="">Select</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Save Interview</button>
+          <button id="clearAll" class="btn btn-secondary" type="button">Clear All</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Saved Interviews</h2>
+      <div id="list" class="interview-list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

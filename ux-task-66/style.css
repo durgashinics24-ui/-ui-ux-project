@@ -1,0 +1,170 @@
+/* SYSTEM LEVEL CORE RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+}
+
+/* CARRIER MODULE PANEL CARD background */
+.wireframe-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.wireframe-header {
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #fef3c7;
+    color: #d97706;
+    border: 1px solid #fde68a;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.wireframe-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* CANVAS REAL ESTATE WINDOW GRID LAYOUTS */
+.onboarding-canvas {
+    background-color: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ONBOARDING HARDWARE PHONE DISPLAY VIEWPORT SIMULATOR */
+.onboarding-window {
+    width: 300px;
+    background-color: #ffffff;
+    border: 2px solid #94a3b8;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* REUSABLE LO-FI WIREFRAME ELEMENT BOXES */
+.lofi-placeholder-box {
+    background-color: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: 4px;
+}
+
+/* TOP SKIP ROW ACTION ELEMENT */
+.onboarding-top-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.action-skip {
+    width: 45px;
+    height: 18px;
+}
+
+/* CENTRAL ART MEDIA BOX ELEMENT */
+.onboarding-media-block {
+    display: flex;
+    justify-content: center;
+}
+
+.media-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* HEADLINE & DESCRIPTIVE PARAGRAPH BLOCKS */
+.onboarding-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.text-headline {
+    width: 80%;
+    height: 20px;
+    margin-bottom: 4px;
+}
+
+.text-body-line {
+    width: 95%;
+    height: 10px;
+}
+
+.text-body-line.short {
+    width: 65%;
+}
+
+/* FOOTER CONTROL BAR LAYER */
+.onboarding-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 16px;
+}
+
+.flow-step-indicators {
+    display: flex;
+    gap: 6px;
+}
+
+.step-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+}
+
+.step-dot.active {
+    background-color: #cbd5e1;
+    border: 1px solid #94a3b8;
+}
+
+.action-next-btn {
+    width: 75px;
+    height: 32px;
+    border-radius: 6px;
+}

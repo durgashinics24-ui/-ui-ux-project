@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Task 73 - Micro-interactions Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 73. CREATE MICRO-INTERACTIONS COMPONENT -->
+        <div class="prototype-card">
+            <header class="prototype-header">
+                <span class="badge">Task 73: State Feedback</span>
+                <h2>73. Functional UI Micro-interactions</h2>
+                <p class="subtitle">Focus: Delivering instant, micro-scale interface rewards using pure CSS scaling transitions and pseudo-states.</p>
+            </header>
+
+            <!-- INTERACTIVE SHOWCASE HUB -->
+            <div class="micro-interaction-hub">
+                
+                <!-- 1. DYNAMIC TOGGLE INTERACTION -->
+                <div class="interaction-showcase-box">
+                    <h5>Toggle Interaction (Favorite)</h5>
+                    <div class="favorite-toggle-wrapper">
+                        <input type="checkbox" id="fav-checkbox" hidden>
+                        <label for="fav-checkbox" class="fav-icon-lbl">
+                            <span class="heart-empty">🤍</span>
+                            <span class="heart-filled">❤️</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. SUCCESS SCALE INTERACTION -->
+                <div class="interaction-showcase-box">
+                    <h5>Action Interaction (Active Click)</h5>
+                    <button class="micro-feedback-btn">
+                        <span class="btn-text-default">Send Asset Package</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Task 58 - User Flow Diagram</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 58. DESIGN USER FLOW DIAGRAMS COMPONENT -->
+        <div class="flow-card">
+            
+            <header class="flow-header">
+                <span class="badge">UX Phase 03: Interaction</span>
+                <h2>58. User Interaction Flow Chart</h2>
+                <p class="subtitle">User Objective: Resetting a forgotten account password safely.</p>
+            </header>
+
+            <!-- THE FLOW CHART FLEX TRACK -->
+            <div class="flow-diagram-container">
+                
+                <!-- STEP 1 -->
+                <div class="flow-node entry">
+                    <span class="node-type">Start</span>
+                    <h4>Login Screen</h4>
+                    <p class="node-action">Clicks "Forgot Password"</p>
+                </div>
+
+                <div class="flow-arrow">➔</div>
+
+                <!-- STEP 2 -->
+                <div class="flow-node action-step">
+                    <span class="node-type">Input</span>
+                    <h4>Email Form</h4>
+                    <p class="node-action">Submits valid email address</p>
+                </div>
+
+                <div class="flow-arrow">➔</div>
+
+                <!-- STEP 3 -->
+                <div class="flow-node decision">
+                    <span class="node-type">Decision</span>
+                    <h4>OTP Input</h4>
+                    <p class="node-action">Checks if code matches system</p>
+                </div>
+
+                <div class="flow-arrow">➔</div>
+
+                <!-- STEP 4 -->
+                <div class="flow-node success-state">
+                    <span class="node-type">End</span>
+                    <h4>New Password</h4>
+                    <p class="node-action">Access completely granted</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

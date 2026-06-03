@@ -1,0 +1,132 @@
+/* SYSTEM LEVEL CORE RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 720px;
+}
+
+/* CONTAINER ARCHITECTURE CARD */
+.heuristic-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.heuristic-header {
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.heuristic-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* AUDIT LOG LIST ENTRIES */
+.audit-log-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.audit-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid #cbd5e1;
+}
+
+.audit-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.heuristic-principle {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.severity-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* HIGH SEVERITY LOG ACCENTS */
+.audit-item.severity-high { border-left-color: #ef4444; }
+.audit-item.severity-high .severity-badge { background-color: #fee2e2; color: #ef4444; }
+
+/* LOW SEVERITY LOG ACCENTS */
+.audit-item.severity-low { border-left-color: #f59e0b; }
+.audit-item.severity-low .severity-badge { background-color: #fef3c7; color: #d97706; }
+
+.audit-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.audit-finding, .audit-fix {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.audit-fix {
+    margin-bottom: 0;
+    color: #1e293b;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px dashed #e2e8f0;
+}

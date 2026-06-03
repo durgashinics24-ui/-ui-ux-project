@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Task 71 - Clickable Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 71. CREATE CLICKABLE PROTOTYPE COMPONENT -->
+        <div class="prototype-card">
+            <header class="prototype-header">
+                <span class="badge">Task 71: Clickable Mockup</span>
+                <h2>71. Pure CSS Tabbed Prototype</h2>
+                <p class="subtitle">Focus: Simulating a live application tab switcher natively using only CSS radio mechanics.</p>
+            </header>
+
+            <!-- CLICKABLE PROTOTYPE APP FRAME -->
+            <div class="prototype-app-shell">
+                
+                <!-- Hidden inputs to track active click states -->
+                <input type="radio" id="tab1-trigger" name="app-tabs" checked hidden>
+                <input type="radio" id="tab2-trigger" name="app-tabs" hidden>
+
+                <!-- Navigation Tabs Bar -->
+                <nav class="prototype-nav">
+                    <label for="tab1-trigger" class="nav-tab btn-tab1">📥 Inbox View</label>
+                    <label for="tab2-trigger" class="nav-tab btn-tab2">⚙️ Settings</label>
+                </nav>
+
+                <!-- View Panels Canvas Area -->
+                <div class="view-panels-container">
+                    
+                    <!-- Panel 1 Content -->
+                    <div class="content-panel panel-inbox">
+                        <h4>My Workspace Feed</h4>
+                        <p>No new team alert notifications received today. Your system workspace code is fully synced up.</p>
+                    </div>
+
+                    <!-- Panel 2 Content -->
+                    <div class="content-panel panel-settings">
+                        <h4>Account Preferences</h4>
+                        <p>Configure account parameters, manage authentication tokens, and toggle interface dark mode parameters.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+s

@@ -1,0 +1,202 @@
+/* SYSTEM LEVEL CORE RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px; /* Wider footprint to fit widescreen simulation cleanly */
+}
+
+/* CARRIER FRAME DECK PANEL */
+.wireframe-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.wireframe-header {
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #f0f9ff;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.wireframe-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* WIDESCREEN SIMULATION SCREEN LAYOUT ENGINE */
+.desktop-viewport-canvas {
+    background-color: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* APP TOP BAR BAR */
+.desktop-top-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.desktop-logo-block {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0369a1;
+    letter-spacing: -0.5px;
+}
+
+.desktop-nav-links {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-placeholder-pill {
+    width: 60px;
+    height: 14px;
+    background-color: #e2e8f0;
+    border-radius: 20px;
+}
+
+/* SPLIT APPLICATION LAYOUT GRID PANEL */
+.desktop-workspace-split {
+    display: flex;
+    min-height: 380px;
+}
+
+/* LEFT SIDEBAR VIEW */
+.desktop-control-sidebar {
+    width: 180px;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding: 20px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-item-box {
+    width: 100%;
+    height: 28px;
+    background-color: #f1f5f9;
+    border-radius: 6px;
+}
+
+.sidebar-item-box.active {
+    background-color: #e0f2fe;
+    border-left: 3px solid #0369a1;
+    border-radius: 0 6px 6px 0;
+}
+
+/* MAIN BODY REGION CONTROLLER */
+.desktop-main-body {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-intro-banner {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.banner-title-line {
+    width: 40%;
+    height: 16px;
+    background-color: #cbd5e1;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.banner-body-line {
+    width: 85%;
+    height: 10px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+}
+
+/* CARDS DATA TIERS CARDS GRID */
+.desktop-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.analytic-mock-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-circle-art {
+    width: 32px;
+    height: 32px;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    border: 2px dashed #cbd5e1;
+}
+
+.card-line-short {
+    width: 60%;
+    height: 10px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+}
+
+/* INTERFACE SYSTEM SCALING PROTECTION HOOKS */
+@media (max-width: 768px) {
+    .desktop-workspace-split { flex-direction: column; }
+    .desktop-control-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #e2e8f0; flex-direction: row; }
+    .desktop-cards-grid { grid-template-columns: 1fr; }
+}

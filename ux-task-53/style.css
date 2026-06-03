@@ -1,0 +1,128 @@
+/* SYSTEM LEVEL RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* MAIN CARD OUTLINE */
+.empathy-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.empathy-header {
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #fae8ff;
+    color: #a21caf;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.empathy-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* FOUR QUADRANT FLEX LAYOUT MODULES */
+.empathy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.quadrant-box {
+    background-color: #faf5ff;
+    border: 1px solid #f3e8ff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Coloring variation adjustments for clean UI balancing views */
+.quadrant-box:nth-child(even) {
+    background-color: #f0fdfa;
+    border-color: #ccfbf1;
+}
+
+.quad-header {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #701a75;
+    border-bottom: 1px dashed rgba(112, 26, 117, 0.15);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+}
+
+.quadrant-box:nth-child(even) .quad-header {
+    color: #0f766e;
+    border-bottom-color: rgba(15, 118, 110, 0.15);
+}
+
+.quad-content {
+    font-size: 13.5px;
+    color: #334155;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 14px;
+}
+
+.quad-content::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #a21caf;
+}
+
+.quadrant-box:nth-child(even) .quad-content::before {
+    color: #0d9488;
+}
+
+/* BREAKPOINT SYSTEM CONSOLE RE-ARRANGEMENTS */
+@media (max-width: 640px) {
+    .empathy-grid {
+        grid-template-columns: 1fr;
+    }
+}

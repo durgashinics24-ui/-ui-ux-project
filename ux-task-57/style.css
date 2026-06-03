@@ -1,0 +1,135 @@
+/* SYSTEM LEVEL CORE RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+}
+
+/* MAIN SUITE BACKGROUND OUTLINE */
+.ia-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.ia-header {
+    margin-bottom: 28px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #f0fdfa;
+    color: #0f766e;
+    border: 1px solid #99f6e4;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.ia-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* HIERARCHICAL TREE ENGINE VISUALS */
+.ia-tree-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.tree-root-node {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.tree-grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.tree-branch-column {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid #0d9488;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.branch-header {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.leaf-nodes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leaf-nodes-list li {
+    font-size: 12.5px;
+    color: #475569;
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    padding: 8px 12px;
+    border-radius: 6px;
+    line-height: 1.4;
+    position: relative;
+}
+
+.leaf-nodes-list li::before {
+    content: "↳";
+    color: #0d9488;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+/* RESPONSIVE STRUCTURE COLLAPSE */
+@media (max-width: 768px) {
+    .tree-grid-row {
+        grid-template-columns: 1fr;
+    }
+}

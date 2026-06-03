@@ -1,0 +1,195 @@
+/* GLOBAL SYSTEM RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+}
+
+/* MASTER CARRIER HOUSING DECK CARD */
+.wireframe-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wireframe-header {
+    width: 100%;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #ffe4e6;
+    color: #9f1239;
+    border: 1px solid #fecdd3;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.wireframe-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* SMARTPHONE CHASSIS HARDWARE SIMULATION */
+.phone-frame-container {
+    width: 320px;
+    height: 560px;
+    background-color: #0f172a;
+    border-radius: 36px;
+    padding: 10px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* PHONE SCREEN REAL ESTATE ENGINE */
+.phone-screen-viewport {
+    width: 100%;
+    height: 100%;
+    background-color: #f8fafc;
+    border-radius: 28px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.phone-screen-viewport::-webkit-scrollbar {
+    display: none; /* Keep screen workspace clean from visual clutter */
+}
+
+/* APP NAVIGATION APP BAR AREA */
+.mobile-app-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.menu-icon-burger, .profile-icon-thumb {
+    color: #64748b;
+    cursor: pointer;
+}
+
+/* MOBILE ANALYTICS SUMMARY BOX CARD */
+.mobile-stats-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    margin-bottom: 18px;
+}
+
+.card-label-mini {
+    font-size: 10px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mobile-stats-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.progress-bar-track {
+    width: 100%;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #9f1239;
+    border-radius: 3px;
+}
+
+/* LIST COMPONENT VERTICAL STACKS */
+.mobile-list-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-heading {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #64748b;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.list-row-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-row-item input[type="checkbox"] {
+    accent-color: #9f1239;
+    cursor: pointer;
+}
+
+.task-txt {
+    font-size: 13px;
+    color: #334155;
+    font-weight: 500;
+}
+
+.task-txt.line-through {
+    text-decoration: line-through;
+    color: #94a3b8;
+}

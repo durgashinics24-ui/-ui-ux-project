@@ -1,0 +1,159 @@
+/* SYSTEM LEVEL CORE RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+}
+
+/* CARRIER MODULE PANEL CARD BACKGROUND */
+.prototype-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.prototype-header {
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #f5f3ff;
+    color: #6d28d9;
+    border: 1px solid #ddd6fe;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.prototype-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* INTERACTIVE ENGINE WRAPPER */
+.interactive-shell {
+    width: 100%;
+}
+
+.expandable-box {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* SUMMARY STRIP OVERVIEW */
+.box-summary-row {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    z-index: 10;
+    position: relative;
+}
+
+.summary-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.summary-info p {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.action-toggle-lbl {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.action-toggle-lbl:hover {
+    background-color: #1e293b;
+}
+
+/* EXPANDABLE ACCORDION DRAWER LOOP SYSTEM */
+.drawer-expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #f8fafc;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drawer-inner-wrap {
+    padding: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.drawer-inner-wrap h5 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #475569;
+    margin-bottom: 10px;
+}
+
+.metrics-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13.5px;
+    color: #334155;
+}
+
+.metrics-list li::before {
+    content: "⚡ ";
+    color: #6d28d9;
+}
+
+/* 🔄 CHECKBOX STATE SELECTOR CONTROLLERS */
+.toggle-input:checked ~ .expandable-box .drawer-expanded-content {
+    max-height: 200px; /* Arbitrary upper limit bound to reveal content panel */
+}
+
+.toggle-input:checked ~ .expandable-box .action-toggle-lbl {
+    background-color: #6d28d9;
+    content: "Close Details";
+}

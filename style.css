@@ -1,0 +1,4383 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 8. NAVIGATION BAR */
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.nav-links a.active {
+    color: #4f46e5;
+}
+
+/* APP CONTAINERS */
+.app-container {
+    display: flex;
+    flex: 1;
+    margin-top: 65px; /* offset navbar height */
+    margin-bottom: 50px; /* offset footer height */
+}
+
+/* 9. SIDEBAR MENU */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    position: fixed;
+    top: 65px;
+    bottom: 50px;
+    left: 0;
+    overflow-y: auto;
+    padding: 20px 10px;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 8px;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 12px 15px;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    background-color: #eef2ff;
+    color: #4f46e5;
+}
+
+/* MAIN CONTENT CONTAINER */
+.main-content {
+    margin-left: 260px;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* COMMON CARD UTILITY UI */
+.ui-screen {
+    scroll-margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.card h2 {
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.card p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    margin: 20px 0;
+}
+
+/* FORM ELEMENTS */
+.form-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: #4338ca;
+}
+
+.btn-secondary {
+    background-color: #1f2937;
+}
+
+.btn-secondary:hover {
+    background-color: #111827;
+}
+
+/* 4. OTP INPUTS */
+.otp-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.otp-inputs input {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+/* 5. DASHBOARD LAYOUT */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.stat-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #4f46e5;
+}
+
+.stat-card h3 {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* 6. USER PROFILE PAGE */
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #e0e7ff;
+    color: #4f46e5;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 16px auto;
+}
+
+.profile-details p {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+/* 7. SETTINGS PAGE */
+.settings-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.settings-option h4 {
+    color: #374151;
+}
+
+/* 10. FOOTER SECTION */
+.footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    color: #6b7280;
+    z-index: 1000;
+}
+/* GLOBAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.5;
+}
+
+/* BUTTON UTILITIES */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    margin-left: 12px;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+/* 11. HERO SECTION */
+.hero-section {
+    background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+    padding: 100px 24px;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4338ca;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 48px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #4b5563;
+    margin-bottom: 32px;
+}
+
+/* HERO MOCKUP GRAPHIC */
+.mockup-window {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.mockup-dots {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.mockup-dots span {
+    width: 10px;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 50%;
+}
+
+.mock-line {
+    height: 12px;
+    background: #f3f4f6;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+.mock-line.long { width: 85%; }
+.mock-line.medium { width: 60%; }
+
+.mock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.mock-box {
+    height: 100px;
+    background: #f9fafb;
+    border: 1px dashed #e5e7eb;
+    border-radius: 6px;
+}
+
+/* 12. CONTACT FORM UI */
+.contact-section {
+    padding: 100px 24px;
+    background-color: #ffffff;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.contact-info p {
+    color: #6b7280;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #9ca3af;
+}
+
+.info-item span {
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/* CONTACT CARD AND INPUTS */
+.contact-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #111827;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #111827;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #1f2937;
+}
+
+/* RESPONSIVE DESIGN FOR SMALLER SCREENS */
+@media (max-width: 768px) {
+    .hero-container, 
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .contact-card {
+        padding: 24px;
+    }
+}
+/* GLOBAL UTILITIES & CORE OVERRIDES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.section {
+    padding: 80px 24px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-narrow {
+    max-width: 750px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-badge {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4f46e5;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 48px;
+}
+
+/* BUTTON VARIANTS */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+}
+
+.btn-outline:hover {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+/* 13. FAQ ACCORDION PATTERN */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.faq-item[open] {
+    border-color: #4f46e5;
+}
+
+.faq-question {
+    padding: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    color: #64748b;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.faq-item[open] .faq-question::after {
+    content: '−';
+    color: #4f46e5;
+}
+
+.faq-answer {
+    padding: 0 20px 20px 20px;
+    color: #475569;
+    font-size: 15px;
+}
+
+/* 14. PRICING TABLE COMPONENT */
+.pricing-section {
+    background-color: #ffffff;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    align-items: center;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 36px;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-card.popular {
+    border: 2px solid #4f46e5;
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4f46e5;
+    color: white;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.plan-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.plan-desc {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+.plan-price {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 24px;
+}
+
+.plan-price span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 15px;
+}
+
+.plan-features li {
+    color: #334155;
+}
+
+.plan-features li.disabled {
+    color: #cbd5e1;
+    text-decoration: line-through;
+}
+
+/* 15. TESTIMONIAL CARDS COMPONENT */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.testimonial-text {
+    font-size: 15px;
+    color: #475569;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.user-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-avatar {
+    width: 44px;
+    height: 44px;
+    background-color: #e2e8f0;
+    color: #4f46e5;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.user-title {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* RESPONSIVE LAYOUT FIXES */
+@media (max-width: 640px) {
+    .section-title {
+        font-size: 28px;
+    }
+    .pricing-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* RESET RULES & GLOBAL VARIABLE FOUNDATIONS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    position: relative;
+}
+
+/* DEPLOYMENT CONTROL PANEL BAR */
+.control-panel {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.app-display {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* UTILITY BUTTON DESIGNS */
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+}
+
+.btn-action {
+    background-color: #ffffff;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.btn-action:hover {
+    background-color: #f8fafc;
+}
+
+/* 16. NOTIFICATION POPUP COMPONENT */
+.notification-toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    width: 360px;
+    max-width: calc(100vw - 48px);
+    z-index: 2000;
+    transform: translateY(-120px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.notification-toast.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-indicator {
+    width: 6px;
+    height: 38px;
+    background-color: #10b981; /* Green success accent indicator bar */
+    border-radius: 3px;
+    margin-right: 14px;
+    flex-shrink: 0;
+}
+
+.toast-body {
+    flex-grow: 1;
+    padding-right: 12px;
+}
+
+.toast-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.toast-desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #94a3b8;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.toast-close:hover {
+    color: #475569;
+}
+
+/* 17. FULLSCREEN LOADING OVERLAY COMPONENT */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.9); /* Dark backdrop tint layer */
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-container {
+    text-align: center;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    margin: 0 auto 16px auto;
+    animation: spin 0.8s linear infinite;
+}
+
+.loader-text {
+    color: #f8fafc;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 18. EMPTY STATE DESIGN BLOCK */
+.empty-state-card {
+    background-color: #ffffff;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 48px 32px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.empty-icon-wrapper {
+    width: 96px;
+    height: 96px;
+    background-color: #f8fafc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+}
+
+.state-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.state-desc {
+    font-size: 14px;
+    color: #64748b;
+    max-width: 380px;
+    margin: 0 auto 24px auto;
+    line-height: 1.5;
+}
+/* GLOBAL STYLES AND BASE RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.workspace-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* UTILITY BUTTON DESIGNS */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:hover {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+/* 20. DESIGN SEARCH BAR UI COMPONENT */
+.search-header-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 4px 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
+.search-wrapper:focus-within {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    height: 48px;
+    padding-left: 36px;
+    padding-right: 32px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #1e293b;
+    background-color: transparent;
+}
+
+.search-input::placeholder {
+    color: #94a3b8;
+}
+
+.search-shortcut {
+    position: absolute;
+    right: 16px;
+    background-color: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+/* 19. CREATE ERROR PAGE (404) COMPONENT */
+.error-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding-bottom: 60px;
+}
+
+.error-content-card {
+    text-align: center;
+    max-width: 520px;
+    padding: 20px;
+}
+
+.error-badge-code {
+    font-size: 120px;
+    font-weight: 900;
+    line-height: 1;
+    color: #4f46e5;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
+}
+
+.error-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.error-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 32px;
+}
+
+.error-action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* RESPONSIVE LAYOUT BREAKPOINTS */
+@media (max-width: 480px) {
+    .error-badge-code {
+        font-size: 90px;
+    }
+    .error-title {
+        font-size: 26px;
+    }
+    .error-action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .error-action-buttons .btn {
+        width: 100%;
+    }
+    .search-shortcut {
+        display: none; /* Hide shortcut box on mobile displays */
+    }
+    .search-input {
+        padding-right: 0;
+    }
+}
+/* GLOBAL APP UTILITIES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* CONTAINER HOLDING THE TWO MOCKUPS SIDE-BY-SIDE */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* PHONE CASING WRAPPER MOUNT */
+.mobile-device {
+    width: 360px;
+    height: 720px;
+    background-color: #000000;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* SMARTPHONE SCREEN VIEWPORT CONTAINER */
+.device-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    position: relative;
+}
+
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 16px;
+    padding-right: 2px;
+}
+
+/* Hide scrollbar for standard devices but retain functional scrolling behavior */
+.scrollable-content::-webkit-scrollbar,
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* HEADER BASE LAYOUT ELEMENTS */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+/* 21. FOOD DELIVERY APP SPECIFIC COMPONENT THEMES */
+.delivery-location .label {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.delivery-location .address {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.profile-thumb {
+    width: 36px;
+    height: 36px;
+    background: #f8fafc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.app-search input {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: #f1f5f9;
+    font-size: 14px;
+    outline: none;
+}
+
+.horizontal-scroll {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-top: 14px;
+    padding-bottom: 4px;
+}
+
+.category-pill {
+    white-space: nowrap;
+    padding: 8px 16px;
+    background-color: #f1f5f9;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.category-pill.active {
+    background-color: #ff6b35; /* Punchy food delivery theme orange primary */
+    color: white;
+}
+
+.food-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.food-img-placeholder {
+    height: 120px;
+    background-color: #fff3ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+}
+
+.food-details {
+    padding: 12px;
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.rating {
+    font-size: 13px;
+    font-weight: 600;
+    color: #eab308;
+}
+
+.food-meta {
+    font-size: 12px;
+    color: #64748b;
+    margin: 2px 0 8px 0;
+}
+
+.delivery-badge {
+    font-size: 11px;
+    background-color: #f0fdf4;
+    color: #16a34a;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* 22. ECOMMERCE MOBILE APP SPECIFIC COMPONENT THEMES */
+.ecommerce-theme {
+    background-color: #fbfbfc;
+}
+
+.brand-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #111827;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #4f46e5; /* Modern deep indigo tone for retail focus */
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-banner {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.banner-text h3 { font-size: 18px; font-weight: 700; }
+.banner-text p { font-size: 12px; opacity: 0.9; }
+
+.banner-btn {
+    background: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: #4f46e5;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-all {
+    font-size: 13px;
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #f0f0f2;
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img {
+    height: 100px;
+    background: #f8fafc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.product-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    line-height: 1.3;
+    height: 34px;
+    overflow: hidden;
+}
+
+.product-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    margin: 4px 0 10px 0;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 8px;
+    background: #111827;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background: #1f2937;
+}
+/* GLOBAL RESETS & MOBILE SYSTEM CORE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* OUTLINE HOLDER CONTAINER */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* BLACK SMARTPHONE CHASSIS FRAME */
+.mobile-device {
+    width: 360px;
+    height: 720px;
+    background-color: #000000;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* SCREEN RENDERING WINDOW VIEWPORT */
+.device-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    position: relative;
+}
+
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding-right: 2px;
+}
+
+/* Hide navigation scrolls for cleaner presentation aesthetics */
+.scrollable-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* BASE APPLICATION APP BAR ROW */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 14px;
+}
+
+/* 23. FITNESS MOBILE THEME COMPONENT STYLING */
+.fitness-theme {
+    background-color: #090d16; /* Clean deep slate neon contrast fitness background */
+    color: #ffffff;
+}
+
+.fitness-theme .section-heading {
+    color: #ffffff;
+}
+
+.user-greeting .label {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.user-greeting .username {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.notification-bell {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.fitness-summary-card {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
+}
+
+.progress-info h3 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.progress-info p {
+    font-size: 13px;
+    opacity: 0.9;
+    margin: 2px 0 6px 0;
+}
+
+.goal-text {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.macro-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.workout-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.workout-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #334155;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.workout-details {
+    flex-grow: 1;
+}
+
+.workout-details h4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.workout-meta {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.play-btn {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 24. BANKING APP MOBILE THEME COMPONENT STYLING */
+.banking-theme {
+    background-color: #f8fafc;
+}
+
+.bank-brand {
+    font-size: 18px;
+    font-weight: 800;
+    color: #4f46e5;
+    letter-spacing: -0.5px;
+}
+
+.digital-credit-card {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(49, 46, 129, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px;
+}
+
+.card-chip-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.balance-label {
+    font-size: 11px;
+    opacity: 0.7;
+    display: block;
+}
+
+.card-balance {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.card-number-row {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.action-strip {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.action-btn-item {
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.action-btn-item .icon {
+    font-size: 18px;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid #f1f5f9;
+}
+
+.tx-logo {
+    width: 36px;
+    height: 36px;
+    background-color: #f1f5f9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.tx-details {
+    flex-grow: 1;
+}
+
+.tx-details h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.tx-date {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.tx-amount {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tx-amount.negative { color: #ef4444; }
+.tx-amount.positive { color: #10b981; }
+/* GLOBAL RESETS & FOUNDATION SYSTEM OVERRIDES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* SIDE-BY-SIDE OUTLINE CHASSIS HOOKS */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* SMARTPHONE OUTLINE BOUNDS */
+.mobile-device {
+    width: 360px;
+    height: 720px;
+    background-color: #000000;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* VIEWPORT CONTAINER INSIDE PHONE FRAMES */
+.device-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+/* Clear vertical browser components */
+.scrollable-content::-webkit-scrollbar,
+.story-tray::-webkit-scrollbar {
+    display: none;
+}
+
+/* CORE NAVIGATION APP BAR ROW */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 16px 12px 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* 25. CHAT APPLICATION GRAPHICAL PATTERNS */
+.chat-theme {
+    background-color: #f8fafc;
+}
+
+.chat-header {
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.chat-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.chat-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.chat-status {
+    font-size: 11px;
+    color: #10b981;
+    display: block;
+    font-weight: 500;
+}
+
+.chat-actions {
+    color: #64748b;
+    font-size: 16px;
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+}
+
+/* CHAT BUBBLE TAIL LAYOUTS */
+.chat-history {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.message-bubble {
+    max-width: 75%;
+    padding: 12px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.4;
+    position: relative;
+}
+
+.message-bubble p {
+    word-break: break-word;
+}
+
+.message-time {
+    display: block;
+    font-size: 10px;
+    margin-top: 4px;
+    text-align: right;
+    opacity: 0.7;
+}
+
+.message-bubble.received {
+    background-color: #ffffff;
+    color: #334155;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.message-bubble.sent {
+    background-color: #4f46e5; /* Distinct modern purple primary messaging hub */
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+/* INPUT COMPONENT BAR FOR MESSAGES */
+.chat-input-bar {
+    background-color: #ffffff;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.chat-input-bar input {
+    flex-grow: 1;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    background-color: #f8fafc;
+}
+
+.chat-send-btn {
+    width: 36px;
+    height: 36px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 26. SOCIAL MEDIA APP GRAPHICAL PATTERNS */
+.social-theme {
+    background-color: #ffffff;
+}
+
+.social-brand {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    font-family: 'Georgia', serif;
+}
+
+.social-actions {
+    display: flex;
+    gap: 14px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* HORIZONTAL STORY SECTION MODULE */
+.story-tray {
+    display: flex;
+    gap: 14px;
+    padding: 12px 16px;
+    overflow-x: auto;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.story-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #475569;
+}
+
+.story-ring {
+    width: 54px;
+    height: 54px;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    border: 2px solid transparent;
+}
+
+.story-ring.active {
+    border-color: #f43f5e; /* Distinct vibrant salmon story border notification ring */
+}
+
+/* FEEDS POST DESIGN BLOCK CARD */
+.social-feed {
+    padding: 0;
+}
+
+.feed-post-card {
+    margin-bottom: 24px;
+}
+
+.post-user-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 10px;
+}
+
+.post-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-user-meta {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-user-meta strong {
+    font-size: 13px;
+    color: #0f172a;
+}
+
+.post-user-meta span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.post-options {
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.post-media-placeholder {
+    height: 260px;
+    background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.post-engagement-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.post-engagement-bar .left-actions {
+    display: flex;
+    gap: 14px;
+}
+
+.post-caption-block {
+    padding: 0 16px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.likes-count {
+    margin-bottom: 4px;
+    color: #0f172a;
+}
+
+.caption {
+    color: #334155;
+}
+
+.comments-link {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 6px;
+    cursor: pointer;
+}
+/* GLOBAL RESETS & COMPONENT VARS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* SIDE-BY-SIDE VIEWPORT WORKSPACE WRAPPER */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* DEVICE OUTER FRAME HOOK */
+.mobile-device {
+    width: 360px;
+    height: 720px;
+    background-color: #000000;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* PHONE SCREEN BASE CANVAS VIEWPORT */
+.device-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    position: relative;
+}
+
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding-right: 2px;
+}
+
+/* Hide navigation scrolls for cleaner aesthetics */
+.scrollable-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* APP NAVIGATION LAYOUT HEADER */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.welcome-text {
+    font-size: 12px;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.user-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.header-icon {
+    font-size: 18px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 14px;
+}
+
+/* 27. ONLINE LEARNING APP CUSTOM GRAPHICAL PATTERNS */
+.edu-theme {
+    background-color: #fcfbfe;
+}
+
+.edu-progress-card {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.progress-details h4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.progress-details p {
+    font-size: 12px;
+    opacity: 0.85;
+    margin-bottom: 12px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+
+/* COURSE ROWS */
+.course-card {
+    display: flex;
+    gap: 14px;
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.course-thumbnail {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.bg-purple { background-color: #f5f3ff; color: #6d28d9; }
+.bg-orange { background-color: #fff7ed; color: #c2410c; }
+
+.course-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.course-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    width: max-content;
+    margin-bottom: 4px;
+}
+
+.tag-purple { background-color: #ede9fe; color: #6d28d9; }
+.tag-orange { background-color: #ffedd5; color: #c2410c; }
+
+.course-info h4 {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.course-meta {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* 28. TASK MANAGEMENT APP CUSTOM GRAPHICAL PATTERNS */
+.task-theme {
+    background-color: #f8fafc;
+}
+
+.task-tabs-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.tab-pill {
+    padding: 6px 14px;
+    background-color: #e2e8f0;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tab-pill.active {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* TASK ITEM BOXES */
+.task-item-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+
+.task-status-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.task-status-checkbox.checked {
+    background-color: #10b981;
+    border-color: #10b981;
+}
+
+.task-text-content {
+    flex-grow: 1;
+}
+
+.task-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    line-height: 1.3;
+}
+
+.task-title.line-through {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.task-date {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* PRIORITY LABEL TAGS */
+.priority-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.priority-badge.high { background-color: #fee2e2; color: #ef4444; }
+.priority-badge.medium { background-color: #fef3c7; color: #d97706; }
+.priority-badge.low { background-color: #f0fdf4; color: #16a34a; }
+
+/* STICKY FLOATING CREATION TRIGGER ACTION BUTTON */
+.floating-add-btn {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* GLOBAL RESETS & COMPONENT VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* WORKSPACE GRID HOOK */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* SMARTPHONE CHASSIS FRAME */
+.mobile-device {
+    width: 360px;
+    height: 720px;
+    background-color: #000000;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* RENDERING PORT INSIDE DEVICE HOUSING */
+.device-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    position: relative;
+}
+
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding-right: 2px;
+}
+
+/* Clear default browser scroll visibility bars */
+.scrollable-content::-webkit-scrollbar,
+.hourly-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* APPLICATION MENU ROW */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+/* 29. WEATHER APP SCREEN STYLING TIER */
+.weather-theme {
+    background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%); /* Atmospheric daytime blue backdrop */
+    color: #ffffff;
+}
+
+.weather-theme .section-title {
+    color: #ffffff;
+}
+
+.city-name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.date-text {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.weather-theme .header-icon {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.weather-hero-block {
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.weather-art {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.temperature-display {
+    font-size: 68px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.condition-text {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.high-low-row {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* HORIZONTAL SCROLL TIMELINE COMPONENT */
+.hourly-scroll-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.hourly-pill {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 12px;
+    min-width: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.hourly-pill.active {
+    background-color: #ffffff;
+    color: #0284c7;
+}
+
+.pill-icon {
+    font-size: 18px;
+}
+
+/* 30. TRAVEL BOOKING APP SCREEN STYLING TIER */
+.travel-theme {
+    background-color: #f8fafc;
+}
+
+.welcome-text {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.user-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* SEARCH TRANSACTION CONTROL PANEL COMPONENT */
+.travel-search-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.input-row.border-top {
+    border-top: 1px solid #f1f5f9;
+}
+
+.input-icon {
+    font-size: 18px;
+    color: #64748b;
+}
+
+.travel-search-card input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    background: transparent;
+}
+
+.travel-search-card input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.btn-search {
+    width: 100%;
+    background-color: #0f172a;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+    background-color: #1e293b;
+}
+
+/* ESCAPES GRID ROWS */
+.destination-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.destination-hero {
+    height: 110px;
+    background: linear-gradient(135deg, #fed7aa 0%, #fdbb2d 100%); /* Sunset theme accent illustration background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.destination-details {
+    padding: 12px;
+}
+
+.dest-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.dest-meta h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.dest-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #059669;
+}
+
+.dest-desc {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* GLOBAL RESETS & COMPONENT VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* WORKSPACE GRID WRAPPER */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* BLACK SMARTPHONE CASING */
+.mobile-device {
+    width: 360px;
+    height: 720px;
+    background-color: #000000;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* SMARTPHONE DEVICE CANVAS VIEWPORT */
+.device-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 16px;
+    padding: 0 16px;
+}
+
+.scrollable-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* APP NAVIGATION LAYOUT HEADER */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 16px 0 16px;
+}
+
+.welcome-text {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.user-heading {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.header-icon {
+    font-size: 18px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* 35. EVENT MANAGEMENT APP SPECIFIC THEME */
+.event-theme {
+    background-color: #fafafa;
+}
+
+.event-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+}
+
+.event-banner-art {
+    height: 130px;
+    background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+}
+
+.event-banner-art.music-art {
+    background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+}
+
+.event-details {
+    padding: 16px;
+}
+
+.event-date {
+    font-size: 11px;
+    font-weight: 700;
+    color: #f43f5e;
+    letter-spacing: 0.5px;
+}
+
+.event-details h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 2px 0;
+}
+
+.event-location {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 14px;
+}
+
+.event-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-price {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.btn-ticket {
+    background-color: #0f172a;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* 36. DESKTOP PORTFOLIO WEBSITE THEME */
+.portfolio-desktop-window {
+    flex: 1;
+    min-width: 600px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+}
+
+.portfolio-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 64px;
+}
+
+.portfolio-logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.portfolio-links a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    font-size: 15px;
+    margin-left: 24px;
+}
+
+.portfolio-links a.active {
+    color: #6366f1;
+}
+
+.portfolio-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.portfolio-badge {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4f46e5;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.portfolio-hero-text h1 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #0f172a;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+}
+
+.portfolio-hero-text p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.portfolio-cta-row {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-portfolio-primary {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-portfolio-secondary {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* CODE WINDOW GRAPHIC MOCKUP */
+.code-box-mockup {
+    background-color: #0f172a;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.mockup-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.dot-win {
+    width: 100px;
+    width: 10px;
+    height: 10px;
+    background-color: #334155;
+    border-radius: 50%;
+}
+
+.code-lines {
+    color: #38bdf8;
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* COMPLETING THE MISSING PREVIOUS TAIL SECTION RULES */
+.booking-sheet-panel {
+    background-color: #ffffff;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 20px 16px 24px 16px;
+}
+
+/* RESPONSIVE LAYOUT FIXES */
+@media (max-width: 968px) {
+    .portfolio-hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-desktop-window {
+        min-width: 100%;
+    }
+}
+/* GLOBAL RESETS & STYLING WRAPPERS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 24px;
+}
+
+/* DECK COMPONENT WRAPPER ROW */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* COMMON DESKTOP MONITOR CONTAINER LAYOUTS */
+.desktop-mockup {
+    flex: 1;
+    min-width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mockup-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.brand-logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.mockup-nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.mockup-body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* REUSABLE INFRASTRUCTURE LABELS */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.badge-blue { background-color: #eff6ff; color: #2563eb; }
+.badge-emerald { background-color: #ecfdf5; color: #059669; }
+
+.hero-header {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+
+.hero-paragraph {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* 37. COMPANY SPECIFIC CORE CARDS */
+.company-theme .brand-logo { color: #2563eb; }
+.company-theme .mockup-nav a.active { color: #2563eb; }
+.company-theme .hero-header { color: #1e3a8a; }
+
+.features-row {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.feature-box {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feat-icon { font-size: 24px; }
+.feature-box h5 { font-size: 14px; font-weight: 700; color: #1e293b; }
+
+/* 38. EDUCATIONAL INSTITUTE SPECIFIC CORE CARDS */
+.institute-theme .brand-logo { color: #059669; }
+.institute-theme .mockup-nav a.active { color: #059669; }
+.institute-theme .hero-header { color: #064e3b; }
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+}
+
+.program-card {
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    border-top: 4px solid #059669;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01);
+}
+
+.prog-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.program-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.4;
+}
+
+/* RESPONSIVE LAYOUT SCALING BREAKPOINTS */
+@media (max-width: 1120px) {
+    .workspace-showcase {
+        flex-direction: column;
+    }
+    .desktop-mockup {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+/* GLOBAL RESETS & STYLING WRAPPERS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 24px;
+}
+
+/* DECK COMPONENT WRAPPER ROW */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* COMMON DESKTOP MONITOR CONTAINER LAYOUTS */
+.desktop-mockup {
+    flex: 1;
+    min-width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mockup-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.brand-logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.mockup-nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.mockup-body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* REUSABLE LABELS */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.badge-amber { background-color: #fffbeb; color: #b45309; }
+.badge-sky { background-color: #f0f9ff; color: #0369a1; }
+
+.hero-header {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+
+.hero-paragraph {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* 39. RESTAURANT SPECIFIC CORE CARDS */
+.restaurant-theme .brand-logo { color: #b45309; font-family: 'Georgia', serif; }
+.restaurant-theme .mockup-nav a.active { color: #b45309; }
+.restaurant-theme .hero-header { color: #451a03; font-family: 'Georgia', serif; }
+
+.restaurant-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.menu-preview-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 12px;
+}
+
+.item-graphic {
+    font-size: 28px;
+    background-color: #fffbeb;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.item-desc h5 { font-size: 14px; font-weight: 700; color: #1e293b; }
+.item-desc p { font-size: 12px; color: #64748b; margin-top: 2px; }
+
+/* 40. REAL ESTATE SPECIFIC CORE CARDS */
+.estate-theme .brand-logo { color: #0369a1; }
+.estate-theme .mockup-nav a.active { color: #0369a1; }
+.estate-theme .hero-header { color: #0c4a6e; }
+
+.listings-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+}
+
+.listing-box {
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01);
+}
+
+.listing-visual {
+    height: 100px;
+    background-color: #f0f9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.listing-info {
+    padding: 12px;
+}
+
+.listing-info h5 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.listing-info p {
+    font-size: 11px;
+    color: #0369a1;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* RESPONSIVE LAYOUT SCALING BREAKPOINTS */
+@media (max-width: 1120px) {
+    .workspace-showcase {
+        flex-direction: column;
+    }
+    .desktop-mockup {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+/* GLOBAL RESETS & STYLING WRAPPERS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 24px;
+}
+
+/* CONTAINER HOLDING THE PANELS */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* DESKTOP CONTENT CARDS */
+.desktop-mockup {
+    flex: 1;
+    min-width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mockup-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.brand-logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.mockup-nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.mockup-body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* UTILITY IDENTIFICATION TAGS */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.badge-teal { background-color: #f0fdfa; color: #0d9488; }
+.badge-crimson { background-color: #fef2f2; color: #dc2626; }
+
+.hero-header {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+
+.hero-paragraph {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* 41. HOSPITAL CORE COMPONENT SPECIFICS */
+.hospital-theme .brand-logo { color: #0d9488; }
+.hospital-theme .mockup-nav a.active { color: #0d9488; }
+.hospital-theme .hero-header { color: #115e59; }
+
+.hospital-quick-actions {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.action-card-box {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    background-color: #fdfdfd;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-card-box:hover {
+    background-color: #f0fdf4;
+}
+
+.act-icon { font-size: 24px; }
+.action-card-box h5 { font-size: 14px; font-weight: 700; color: #1e293b; }
+
+/* 42. NEWS PORTAL COMPONENT SPECIFICS */
+.news-theme .brand-logo { color: #111827; font-family: 'Times New Roman', Times, serif; font-size: 22px; border-bottom: 2px solid #111827; }
+.news-theme .mockup-nav a.active { color: #dc2626; }
+.news-theme .hero-header { color: #111827; font-family: 'Times New Roman', Times, serif; }
+
+.news-feed-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.news-line-item {
+    border-left: 3px solid #e2e8f0;
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+.news-line-item:hover {
+    border-left-color: #dc2626;
+}
+
+.news-category {
+    font-size: 10px;
+    font-weight: 700;
+    color: #dc2626;
+    text-transform: uppercase;
+}
+
+.news-line-item h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 2px;
+}
+
+/* RESPONSIVE RENDERING BREAKPOINTS */
+@media (max-width: 1120px) {
+    .workspace-showcase {
+        flex-direction: column;
+    }
+    .desktop-mockup {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+/* GLOBAL RESETS & STYLING WRAPPERS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 24px;
+}
+
+/* WORKSPACE VIEW CONTAINER */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* WIDESCREEN CONTAINER BOXES */
+.desktop-mockup {
+    flex: 1;
+    min-width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mockup-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.brand-logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.mockup-nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.mockup-body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* REUSABLE BADGE CHIPS */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.badge-amber { background-color: #fffbeb; color: #d97706; }
+.badge-indigo { background-color: #e0e7ff; color: #4338ca; }
+
+.hero-header {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+
+.hero-paragraph {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* 43. BLOG THEME CONFIGURATIONS */
+.blog-theme .brand-logo { color: #0f172a; font-family: Georgia, serif; font-style: italic; }
+.blog-theme .mockup-nav a.active { color: #d97706; }
+.blog-theme .hero-header { color: #0f172a; font-family: Georgia, serif; }
+
+.blog-meta-footer {
+    width: 100%;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 16px;
+}
+
+.author-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.author-profile h5 { font-size: 14px; font-weight: 700; color: #1e293b; }
+.author-profile p { font-size: 12px; color: #64748b; }
+
+/* 44. JOB PORTAL THEME CONFIGURATIONS */
+.job-theme .brand-logo { color: #4338ca; }
+.job-theme .mockup-nav a.active { color: #4338ca; }
+.job-theme .hero-header { color: #1e1b4b; }
+
+.job-listings-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.job-row-card {
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.job-row-card:hover {
+    border-color: #4338ca;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.job-title-meta h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.job-title-meta p {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.salary-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: #16a34a;
+    background-color: #f0fdf4;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+/* RESPONSIVE LAYOUT BREAKPOINTS */
+@media (max-width: 1120px) {
+    .workspace-showcase {
+        flex-direction: column;
+    }
+    .desktop-mockup {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+/* GLOBAL RESETS & STYLING WRAPPERS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 24px;
+}
+
+/* DECK COMPONENT ROW CONTAINER */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* WIDESCREEN CONSOLE CONTAINERS */
+.desktop-mockup {
+    flex: 1;
+    min-width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mockup-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+}
+
+.brand-logo {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.mockup-body-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 24px;
+}
+
+.dashboard-section-block {
+    width: 100%;
+}
+
+.block-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+/* 45. CRYPTO DASHBOARD CUSTOM FORMATTINGS */
+.crypto-theme { background-color: #0b0f19; color: #ffffff; border-color: #1e293b; }
+.crypto-theme .mockup-header-bar { border-color: #1e293b; }
+.crypto-theme .brand-logo { color: #f59e0b; }
+.wallet-status-tag { font-size: 12px; font-weight: 600; color: #94a3b8; background-color: #1e293b; padding: 4px 10px; border-radius: 6px; }
+
+.crypto-metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.crypto-card {
+    background-color: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.crypto-token-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.token-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.token-icon.btc { background-color: #fff7ed; color: #ea580c; }
+.token-icon.eth { background-color: #e0e7ff; color: #4338ca; }
+
+.crypto-token-row h4 { font-size: 14px; font-weight: 700; }
+.token-symbol { font-size: 11px; color: #64748b; }
+
+.price-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 14px;
+}
+
+.token-price { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
+.trend-indicator { font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+.trend-indicator.positive { background-color: #065f46; color: #34d399; }
+.trend-indicator.negative { background-color: #7f1d1d; color: #f87171; }
+
+.ledger-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid #1e293b;
+    color: #cbd5e1;
+}
+
+/* 46. ADMIN PANEL CUSTOM FORMATTINGS */
+.admin-theme { background-color: #ffffff; color: #0f172a; }
+.admin-theme .brand-logo { color: #4f46e5; }
+.user-status-avatar { font-size: 12px; font-weight: 600; color: #475569; }
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.admin-stat-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.stat-lbl { font-size: 12px; color: #64748b; margin-bottom: 4px; }
+.admin-stat-box h3 { font-size: 22px; font-weight: 700; }
+.status-ok { color: #16a34a; }
+
+.service-row-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.service-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-dot { width: 8px; height: 8px; border-radius: 50%; }
+.status-dot.online { background-color: #22c55e; box-shadow: 0 0 8px #22c55e; }
+
+.uptime-badge { font-size: 11px; color: #64748b; font-weight: 500; }
+
+/* RESPONSIVE LAYOUT BREAKPOINTS */
+@media (max-width: 1120px) {
+    .workspace-showcase {
+        flex-direction: column;
+    }
+    .desktop-mockup {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+/* GLOBAL RESETS & STYLING WRAPPERS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 24px;
+}
+
+/* DECK COMPONENT ROW CONTAINER */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* WIDESCREEN CONSOLE CONTAINERS */
+.desktop-mockup {
+    flex: 1;
+    min-width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mockup-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+}
+
+.brand-logo {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.mockup-body-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+/* REUSABLE UTILITIES */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.badge-indigo { background-color: #e0e7ff; color: #4338ca; }
+
+.hero-header {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    color: #1e1b4b;
+}
+
+.hero-paragraph {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.dashboard-section-block {
+    width: 100%;
+}
+
+.block-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+/* 47. ANALYTICS DASHBOARD THEME CONFIGURATIONS */
+.analytics-theme { background-color: #ffffff; color: #0f172a; }
+.analytics-theme .brand-logo { color: #3b82f6; }
+.date-filter-tag { font-size: 12px; font-weight: 600; color: #475569; background-color: #f1f5f9; padding: 4px 12px; border-radius: 6px; }
+
+.chart-simulation-card {
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.chart-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.chart-label { font-size: 12px; color: #64748b; }
+.chart-simulation-card h3 { font-size: 22px; font-weight: 700; color: #0f172a; margin-top: 2px; }
+.percentage-up { font-size: 12px; font-weight: 700; color: #16a34a; background-color: #f0fdf4; padding: 2px 6px; border-radius: 4px; }
+
+.mock-graph-vector {
+    margin-top: 14px;
+    width: 100%;
+}
+.graph-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+}
+
+/* 48. SAAS LANDING PAGE THEME CONFIGURATIONS */
+.saas-theme { background-color: #fcfbfe; color: #0f172a; }
+.saas-theme .brand-logo { color: #6366f1; }
+
+.mockup-nav { display: flex; align-items: center; gap: 16px; }
+.mockup-nav a { text-decoration: none; color: #475569; font-size: 13px; font-weight: 600; }
+.btn-nav-cta { background-color: #6366f1; color: white !important; padding: 6px 12px; border-radius: 6px; }
+
+.saas-hero-actions { display: flex; gap: 12px; }
+.btn { padding: 10px 20px; font-size: 13px; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; }
+.btn-primary { background-color: #0f172a; color: white; }
+.btn-secondary { background-color: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+
+.product-preview-card {
+    background-color: #0f172a;
+    border-radius: 10px;
+    padding: 14px;
+    font-family: monospace;
+    font-size: 12px;
+}
+.terminal-dots { color: #475569; display: block; margin-bottom: 8px; }
+.terminal-line { color: #94a3b8; line-height: 1.5; }
+.terminal-line.success { color: #34d399; }
+
+/* RESPONSIVE LAYOUT BREAKPOINTS */
+@media (max-width: 1120px) {
+    .workspace-showcase {
+        flex-direction: column;
+    }
+    .desktop-mockup {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+/* GLOBAL RESETS & STYLING WRAPPERS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 40px 24px;
+}
+
+/* DECK COMPONENT ROW CONTAINER */
+.workspace-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* WIDESCREEN CONSOLE CONTAINERS */
+.desktop-mockup {
+    flex: 1;
+    min-width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mockup-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+}
+
+.brand-logo {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.mockup-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mockup-nav a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mockup-body-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+/* REUSABLE UTILITIES */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: max-content;
+}
+
+.hero-header {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+}
+
+.hero-paragraph {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+/* 49. STARTUP HOMEPAGE THEME CONFIGURATIONS */
+.startup-theme { background-color: #ffffff; color: #0f172a; }
+.startup-theme .brand-logo { color: #7c3aed; }
+.badge-purple { background-color: #f5f3ff; color: #7c3aed; }
+.btn-purple { background-color: #7c3aed; color: #ffffff; }
+.btn-purple:hover { background-color: #6d28d9; }
+
+.traction-strip {
+    margin-top: 12px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 16px;
+}
+
+.traction-lbl {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.logo-row-sim {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 700;
+}
+
+/* 50. DIGITAL MARKETING AGENCY CONFIGURATIONS */
+.agency-theme { background-color: #09090b; color: #ffffff; border-color: #18181b; }
+.agency-theme .mockup-header-bar { border-color: #18181b; }
+.agency-theme .brand-logo { color: #ff6b6b; }
+.agency-theme .mockup-nav a { color: #a1a1aa; }
+.btn-nav-outline { border: 1px solid #ff6b6b; color: #ff6b6b !important; padding: 4px 12px; border-radius: 6px; }
+
+.badge-coral { background-color: #fff5f5; color: #e03131; }
+.agency-theme .hero-header { color: #ffffff; }
+.agency-theme .hero-paragraph { color: #a1a1aa; }
+
+.milestone-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+}
+
+.milestone-card {
+    background-color: #141416;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.milestone-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ff6b6b;
+}
+
+.milestone-card p {
+    font-size: 12px;
+    color: #71717a;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+/* RESPONSIVE LAYOUT BREAKPOINTS */
+@media (max-width: 1120px) {
+    .workspace-showcase {
+        flex-direction: column;
+    }
+    .desktop-mockup {
+        width: 100%;
+        min-width: 100%;
+    }
+}
